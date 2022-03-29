@@ -29,7 +29,7 @@ class ProductExport implements FromView
             'productSpecifications.specification'
         )
         ->get();
-        dd($products->toArray());
+        //dd($products->toArray());
         return view('backexports.products', [
             'products' => $products
         ]);
