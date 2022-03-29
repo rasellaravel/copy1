@@ -1,0 +1,143 @@
+  <div id="styleSelector">
+    <div class="selector-toggle">
+        <a href="javascript:void(0)"></a>
+    </div>
+    <div class="style-cont">
+        <ul>
+            <li>
+                <p class="selector-title main-title">Mash Able CUSTOMIZER</p>
+            </li>
+        </ul>
+        <ul class="nav nav-tabs  tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#sel-pos" role="tab">Position</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sel-lay" role="tab">Layout</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sel-sid" role="tab">Sidebar</a></li>
+        </ul>
+        <div class="tab-content tabs">
+            <div class="tab-pane active" id="sel-pos" role="tabpanel">
+                <ul>
+                    <li class="theme-option">
+                        <div class="checkbox-fade fade-in-success">
+                            <label>
+                                <input type="checkbox" value="false" id="sidebar-position" name="sidebar-position"><span class="cr">
+                                    <i class="cr-icon icofont icofont-ui-check txt-success"></i>
+                                </span>
+                                <span>Fixed Sidebar Position</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="theme-option">
+                        <div class="checkbox-fade fade-in-success">
+                            <label>
+                                <input type="checkbox" value="false" id="header-position" name="header-position"><span class="cr">
+                                    <i class="cr-icon icofont icofont-ui-check txt-success"></i>
+                                </span>
+                                <span>Fixed Header Position</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="theme-option">
+                        <div class="checkbox-fade fade-in-success">
+                            <label>
+                                <input type="checkbox" value="false" id="vertical-item-border" name="vertical-item-border"><span class="cr"><i class="cr-icon icofont icofont-ui-check txt-success"></i></span><span>Hide Item Border</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="theme-option">
+                        <div class="checkbox-fade fade-in-success">
+                            <label>
+                                <input type="checkbox" value="false" id="vertical-subitem-border" name="vertical-item-border"><span class="cr"><i class="cr-icon icofont icofont-ui-check txt-success"></i></span><span>Hide SubItem Border</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="sel-lay" role="tabpanel">
+                <ul>
+                    <li class="theme-option">
+                        <p class="sub-title">Page Layout</p>
+                        <select id="theme-layout" class="form-control minimal input-sm">
+                            <option name="vertical-layout" value="wide">Wide layout</option>
+                            <option name="vertical-layout" value="box">Boxed layout</option>
+                        </select>
+                    </li>
+                    <li class="theme-option">
+                        <p class="sub-title">Navbar Placement</p>
+                        <select id="vertical-navbar-placement" class="form-control minimal input-sm">
+                            <option name="navigation-side" value="left">Left</option>
+                            <option name="navigation-side" value="right">Right</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="sel-sid" role="tabpanel">
+                <ul>
+                    <li class="theme-option">
+                        <p class="sub-title drp-title">SideBar Effect</p>
+                        <select id="vertical-menu-effect" class="form-control minimal">
+                            <option name="vertical-menu-effect" value="shrink">shrink</option>
+                            <option name="vertical-menu-effect" value="overlay">overlay</option>
+                            <option name="vertical-menu-effect" value="push">Push</option>
+                        </select>
+                    </li>
+                    <li class="theme-option">
+                        <p class="sub-title drp-title">Border Style</p>
+                        <select id="vertical-border-style" class="form-control minimal">
+                            <option name="vertical-border-style" value="solid">Style 1</option>
+                            <option name="vertical-border-style" value="dotted">Style 2</option>
+                            <option name="vertical-border-style" value="dashed">Style 3</option>
+                            <option name="vertical-border-style" value="none">No Border</option>
+                        </select>
+                    </li>
+                    <li class="theme-option">
+                        <p class="sub-title drp-title">DropDown Icon</p>
+                        <select id="vertical-dropdown-icon" class="form-control minimal">
+                            <option name="vertical-dropdown-icon" value="style1">Style 1</option>
+                            <option name="vertical-dropdown-icon" value="style2">style 2</option>
+                            <option name="vertical-dropdown-icon" value="style3">style 3</option>
+                        </select>
+                    </li>
+                    <li class="theme-option">
+                        <p class="sub-title drp-title">Submenu Item Icon</p>
+                        <select id="vertical-subitem-icon" class="form-control minimal">
+                            <option name="vertical-subitem-icon" value="style1">Style 1</option>
+                            <option name="vertical-subitem-icon" value="style2">style 2</option>
+                            <option name="vertical-subitem-icon" value="style3">style 3</option>
+                            <option name="vertical-subitem-icon" value="style4">style 4</option>
+                            <option name="vertical-subitem-icon" value="style5">style 5</option>
+                            <option name="vertical-subitem-icon" value="style6">style 6</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <ul>
+                <li>
+                    <p class="selector-title">Navigator Option</p>
+                </li>
+                <li class="theme-option"><span class="selector-title">Menu Caption Color</span>
+                    <div class="theme-color"><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme1">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme2">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme3">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme4">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme5">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme6">&nbsp;</a></div>
+                    <div class="theme-color"><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme7">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme8">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme9">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme10">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme11">&nbsp;</a><a href="javascript:void(0)" class="leftheader-theme" lheader-theme="theme12">&nbsp;</a></div>
+                </li>
+                <li class="theme-option"><span class="selector-title">Active item Theme</span>
+                    <div class="theme-color"><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme1">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme2">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme3">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme4">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme5">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme6">&nbsp;</a></div>
+                    <div class="theme-color"><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme7">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme8">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme9">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme10">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme11">&nbsp;</a><a href="javascript:void(0)" class="active-item-theme" active-item-theme="theme12">&nbsp;</a></div>
+                </li>
+                <li class="theme-option"><span class="selector-title">Background Patterns</span>
+                    <div class="theme-color"><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern1">&nbsp;</a><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern2">&nbsp;</a><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern3">&nbsp;</a><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern4">&nbsp;</a><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern5">&nbsp;</a><a href="javascript:void(0)" class="themebg-pattern" themebg-pattern="pattern6">&nbsp;</a></div>
+                </li>
+                <li>
+                    <p class="selector-title">Light Sidebar</p>
+                </li>
+                <li class="theme-option">
+                    <div class="theme-color"><a href="javascript:void(0)" class="data-navbar-theme" data-navbar-theme="themelight1"><span class="head"></span><span class="cont"></span></a></div>
+                </li>
+                <li>
+                    <p class="selector-title">Dark Sidebar</p>
+                </li>
+                <li class="theme-option">
+                    <div class="theme-color"><a href="javascript:void(0)" class="data-navbar-theme" data-navbar-theme="theme1"><span class="head"></span><span class="cont"></span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

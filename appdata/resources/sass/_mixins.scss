@@ -1,0 +1,532 @@
+// breakpoint mixin
+@mixin breakpoint($mq01: 0, $mq2: false, $maxmin: max-width) {
+    @if $mq2 == false {
+        @media ($maxmin: $mq01) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $mq01) and (max-width: $mq2) {
+            @content;
+        }
+    }
+} // breakpoint-h mixin
+@mixin breakpoint-h($mq01: 0, $mq2: false, $maxmin: max-height) {
+    @if $mq2 == false {
+        @media ($maxmin: $mq01) {
+            @content;
+        }
+    } @else {
+        @media (min-height: $mq01) and (max-height: $mq2) {
+            @content;
+        }
+    }
+}
+
+// responsive font size mixin
+@mixin font-size-p-map($font-size-p-map) {
+    @each $breakpoint, $font-size in $font-size-p-map {
+        @if $breakpoint == null {
+            font-size: $font-size;
+        } @else {
+            @include breakpoint($breakpoint) {
+                font-size: $font-size;
+            }
+        }
+    }
+}
+// responsive width mixin
+@mixin width-p-map($width-p-map) {
+    @each $breakpoint, $width-p in $width-p-map {
+        @if $breakpoint == null {
+            width: $width-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                width: $width-p;
+            }
+        }
+    }
+}
+// responsive height mixin
+@mixin height-p-map($height-p-map) {
+    @each $breakpoint, $height-p in $height-p-map {
+        @if $breakpoint == null {
+            height: $height-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                height: $height-p;
+            }
+        }
+    }
+}
+// responsive top mixin
+@mixin top-p-map($top-p-map) {
+    @each $breakpoint, $top-p in $top-p-map {
+        @if $breakpoint == null {
+            top: $top-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                top: $top-p;
+            }
+        }
+    }
+}
+// responsive right mixin
+@mixin right-p-map($right-p-map) {
+    @each $breakpoint, $right-p in $right-p-map {
+        @if $breakpoint == null {
+            right: $right-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                right: $right-p;
+            }
+        }
+    }
+}
+// responsive bottom mixin
+@mixin bottom-p-map($bottom-p-map) {
+    @each $breakpoint, $bottom-p in $bottom-p-map {
+        @if $breakpoint == null {
+            bottom: $bottom-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                bottom: $bottom-p;
+            }
+        }
+    }
+}
+// responsive left mixin
+@mixin left-p-map($left-p-map) {
+    @each $breakpoint, $left-p in $left-p-map {
+        @if $breakpoint == null {
+            left: $left-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                left: $left-p;
+            }
+        }
+    }
+}
+// responsive transform: translate() mixin
+@mixin transform-translate-p-map($transform-translate-p-map) {
+    @each $breakpoint, $transform-translate-p in $transform-translate-p-map {
+        @if $breakpoint == null {
+            transform: translate($transform-translate-p);
+        } @else {
+            @include breakpoint($breakpoint) {
+                transform: translate($transform-translate-p);
+            }
+        }
+    }
+}
+// responsive line-height mixin
+@mixin line-height-p-map($line-height-p-map) {
+    @each $breakpoint, $line-height-p in $line-height-p-map {
+        @if $breakpoint == null {
+            line-height: $line-height-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                line-height: $line-height-p;
+            }
+        }
+    }
+}
+// responsive padding mixin
+@mixin padding-p-map($padding-p-map) {
+    @each $breakpoint, $padding-p in $padding-p-map {
+        @if $breakpoint == null {
+            padding: $padding-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                padding: $padding-p;
+            }
+        }
+    }
+}
+// responsive font-size mixin
+@mixin font-size-p-map($font-size-p-map) {
+    @each $breakpoint, $font-size-p in $font-size-p-map {
+        @if $breakpoint == null {
+            font-size: $font-size-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                font-size: $font-size-p;
+            }
+        }
+    }
+}
+
+// responsive text-align mixin
+@mixin text-align-p-map($text-align-p-map) {
+    @each $breakpoint, $text-align-p in $text-align-p-map {
+        @if $breakpoint == null {
+            text-align: $text-align-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                text-align: $text-align-p;
+            }
+        }
+    }
+}
+
+// responsive display mixin
+@mixin display-p-map($display-p-map) {
+    @each $breakpoint, $display-p in $display-p-map {
+        @if $breakpoint == null {
+            display: $display-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                display: $display-p;
+            }
+        }
+    }
+}
+
+// responsive float mixin
+@mixin float-p-map($float-p-map) {
+    @each $breakpoint, $float-p in $float-p-map {
+        @if $breakpoint == null {
+            float: $float-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                float: $float-p;
+            }
+        }
+    }
+}
+// responsive margin-left mixin
+@mixin margin-left-p-map($margin-left-p-map) {
+    @each $breakpoint, $margin-left-p in $margin-left-p-map {
+        @if $breakpoint == null {
+            margin-left: $margin-left-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                margin-left: $margin-left-p;
+            }
+        }
+    }
+}
+@mixin margin-p-map($margin-p-map) {
+    @each $breakpoint, $margin-p in $margin-p-map {
+        @if $breakpoint == null {
+            margin: $margin-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                margin: $margin-p;
+            }
+        }
+    }
+}
+
+// responsive margin-top mixin for height
+@mixin margin-top-p-map-h($margin-top-p-map) {
+    @each $breakpoint, $margin-top-p in $margin-top-p-map {
+        @if $breakpoint == null {
+            margin-top: $margin-top-p;
+        } @else {
+            @include breakpoint-h($breakpoint) {
+                margin-top: $margin-top-p;
+            }
+        }
+    }
+}
+// responsive margin mixin for height
+@mixin margin-p-map-h($margin-p-map) {
+    @each $breakpoint, $margin-p in $margin-p-map {
+        @if $breakpoint == null {
+            margin: $margin-p;
+        } @else {
+            @include breakpoint-h($breakpoint) {
+                margin: $margin-p;
+            }
+        }
+    }
+}
+
+// flex
+@mixin flex-p-map($flex-p-map) {
+    @each $breakpoint, $flex-p in $flex-p-map {
+        @if $breakpoint == null {
+            flex: $flex-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                flex: $flex-p;
+            }
+        }
+    }
+}
+// max-width
+@mixin max-width-p-map($max-width-p-map) {
+    @each $breakpoint, $max-width-p in $max-width-p-map {
+        @if $breakpoint == null {
+            max-width: $max-width-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                max-width: $max-width-p;
+            }
+        }
+    }
+}
+// flex direction
+@mixin flex-direction-p-map($flex-direction-p-map) {
+    @each $breakpoint, $flex-direction-p in $flex-direction-p-map {
+        @if $breakpoint == null {
+            flex-direction: $flex-direction-p;
+        } @else {
+            @include breakpoint($breakpoint) {
+                flex-direction: $flex-direction-p;
+            }
+        }
+    }
+}
+//flex
+$top-product-section-col-lg-flex: (
+    null: 0 0 20%,
+    1200px: 0 0 25%,
+    991px: 0 0 33.33%,
+    767px: 0 0 50%,
+    400px: 0 0 100%
+);
+$user-profile-nav-pills-flex-deraction: (
+    null: column,
+    991px: row
+);
+$profile1-tab-content-width: (
+    null: calc(100% - 270px),
+    991px: 100%
+);
+
+$igo-cart2-warp-tr-display: (
+    null: null,
+    800px: block
+);
+
+$igo-cart2-warp-td-display: (
+    null: null,
+    800px: block
+);
+
+//max-width
+$top-product-section-col-lg-max-width: (
+    null: 20%,
+    1200px: 25%,
+    991px: 33.33%,
+    767px: 50%,
+    400px: 100%
+);
+
+$profile1-nav-pills-width: (
+    null: 250px,
+    991px: 100%
+);
+
+$user-profile-nav-flex-deraction: (
+    null: row,
+    991px: column
+);
+
+//new-code
+$top-product-show-padding: (
+    null: 30px 40px,
+    1200px: 30px 20px,
+    767px: 20px 10px
+);
+$s-tp-padding: (
+    null: 15px 10px,
+    575px: 15px 5px
+);
+$main-menu-nav-link-padding: (
+    null: 10px,
+    1100px: 10px 5px
+);
+$main-menu-nav-link-font-size: (
+    null: 16px,
+    1200px: 14px
+);
+//footer
+$subscribe-btn-float: (
+    null: left,
+    991px: left
+);
+$subscribe-btn-margin-left: (
+    null: 10px,
+    575px: 0
+);
+$subscribe-btn-padding: (
+    null: 6px 20px
+);
+$pro-d-product-info-padding: (
+    null: 0 0 0 30px,
+    991px: 30px 0 0 0
+);
+$nav-tabs-nav-link-padding: (
+    null: null,
+    400px: 6px
+);
+
+$form-col-12-padding: (
+    null: null,
+    767px: 0
+);
+
+$footer-form-control-float: (
+    null: left,
+    991px: left
+);
+$footer-form-control-width: (
+    null: calc(100% - 132px),
+    400px: 100%
+);
+
+// display
+$f-in-ul-display: (
+    null: null,
+    991px: none
+);
+$mbl-bar-m-display: (
+    null: none,
+    991px: flex
+);
+
+// text align
+$mid-menu-text-align: (
+    null: null,
+    767px: center
+);
+$bar-li-text-align: (
+    null: left,
+    767px: center
+);
+$payment-icon-text-align: (
+    null: right,
+    767px: center
+);
+$footer-bottom-text-align: (
+    null: null,
+    767px: center
+);
+
+// font sizes
+$bannertext-h2-font-size: (
+    null: 60px,
+    575px: 40px
+);
+$tps-tlt-font-size: (
+    null: 32px,
+    767px: 25px,
+    575px: 20px,
+    400px: 18px
+);
+$tps-tlt1-font-size: (
+    null: 20px,
+    767px: 18px,
+    575px: 16px,
+    400px: 14px
+);
+$banner-bannertext-h2-font-size: (
+    null: 32px,
+    575px: 25px,
+    400px: 20px
+);
+$bannertext-p-font-size: (
+    null: 16px,
+    575px: 14px
+);
+
+// margin
+$review-nav-margin: (
+    null: 20px 0,
+    991px: 0
+);
+
+$main-wrapper-padding: (
+    null: 0 50px,
+    1200px: 0 30px,
+    767px: 0 15px
+);
+
+$mid-menu-padding: (
+    null: 10px 50px,
+    1200px: 10px 30px,
+    767px: 10px 15px
+);
+$footer-section-padding: (
+    null: 50px 50px 30px,
+    1200px: 40px 30px 30px,
+    767px: 30px 15px 30px
+);
+// height
+
+// width
+
+$feature-width: (
+    null: 20%,
+    991px: 33.33%,
+    767px: 50%
+);
+$search-box-width: (
+    null: calc(100% - 275px),
+    767px: calc(100% - 120px),
+    500px: calc(100% - 80px),
+    400px: calc(100% - 50px)
+);
+$mid-ul-width: (
+    null: calc(100% - 360px),
+    767px: calc(100% - 120px),
+    575px: calc(100% - 90px)
+);
+$logo-width: (
+    null: 120px,
+    575px: 90px
+);
+$search-width: (
+    null: 400px,
+    991px: 300px,
+    767px: 250px
+);
+$search-box-padding: (
+    null: 0 20px,
+    767px: 0 0 0 15px
+);
+$search-icon-right: (
+    null: 20px,
+    767px: 0
+);
+
+// top
+$short-select-top: (
+    null: -45px,
+    767px: -55px
+);
+$lan-social-manu-top: (
+    null: 50%,
+    991px: 20px
+);
+
+// right
+$banner-slide-txt-right: (
+    null: 35px,
+    575px: 0
+);
+
+// bottom
+
+// left
+$slide-txt-left: (
+    null: 89px,
+    991px: 40px,
+    575px: 20px
+);
+$banner-slide-txt-left: (
+    null: inherit,
+    575px: 0
+);
+
+// transform: translate()
+
+// line-height
+
+// margin-top
+
+// padding
+
+// font-size

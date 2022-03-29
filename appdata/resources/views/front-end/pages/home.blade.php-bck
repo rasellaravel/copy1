@@ -1,0 +1,424 @@
+ @extends('front-end.app')
+ @section('style')
+ @endsection
+ @section('content')
+ <section class="home-section section">
+ 	<div class="row mar-0">
+ 		<div class="col-12 d-none d-md-block col-md-4 col-lg-3 pad-l-0">
+ 			<div class="sidebar"> 
+ 				<div class="left_banner"> 
+ 					<a href="#"><img src="{{asset('assets/img/side1.jpg')}}" alt="Left Banner" class="cover img-responsive"></a> 
+ 				</div>
+ 				<div class="left-feature">
+ 					<div class="feature">
+ 						<div class="fea-icon shiping"></div>
+ 						<h6>Free Shipping</h6>
+ 						<p>Free delivery worldwide</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon order"></div>
+ 						<h6>Order Online</h6>
+ 						<p>Hours : 8am - 11pm</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon save"></div>
+ 						<h6>Shop And Save</h6>
+ 						<p>For All Spices & Herbs</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon safe"></div>
+ 						<h6>Safe Shoping</h6>
+ 						<p>Ensure genuine 100%</p>
+ 					</div>
+ 				</div>
+ 				@include('front-end.pages.inc.top-pro-slider')
+ 			</div>
+ 		</div>
+ 		<div class="col-12 col-md-8 col-lg-9 pad-r-0">
+ 			<div class="slide-section">
+ 				<div class="swiper-container swiper-container1">
+ 					<div class="swiper-wrapper">
+ 						@foreach($sliders as $slider)
+ 						<div class="swiper-slide">
+ 							<div class="swiper-cnt wh-100">
+ 								<img src="{{ asset('mainSlider/' . $slider->slider)  }}" alt="Left Banner" class="img-responsive cover">
+ 								<div class="slide-txt">
+ 									<div class="bannertext">
+ 										<h2>{{$slider->title_en}}</h2>
+ 										<p class="">{{$slider->description_en}}</p>
+ 									</div>
+ 									@if($slider->btn_name_en)
+ 									<a href="{{$slider->url}}"><button class="btn ctm-btn shop-btn">{{$slider->btn_name_en}}</button></a>
+ 									@endif
+ 								</div>
+ 							</div>
+ 						</div>
+ 						@endforeach
+ 					</div>
+ 					<!-- Add Pagination -->
+ 					<div class="swiper-pagination"></div>
+ 				</div>
+ 			</div>
+ 			<div class="product-slider">
+ 				<div class="heading-part">
+ 					<h2 class="main-title">Top Products</h2>
+ 					<div class="next-pre">
+ 						<div class="swiper-button-prev home-electronics-prev"></div>
+ 						<div class="swiper-button-next home-electronics-next"></div>
+ 					</div>
+ 				</div>
+ 				<div class="swiper-container home-electronics-container">
+ 					<div class="swiper-wrapper">
+ 						@php
+ 						$n = 0;
+ 						@endphp
+ 						@for($i=0;$i<ceil($top_products->count() / 3);$i++)
+ 						<div class="swiper-slide">
+ 							<div class="product">
+ 								<div class="single-product single-product-show">
+ 									<div class="product-img">
+ 										<a href="#">
+ 											@if($top_products[$n]->product_img)
+ 											<img src="{{ asset('proAltImg/' . $top_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-n">
+ 											<img src="{{ asset('proAltImg/' . $top_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-h d-none">
+ 											@else
+ 											<img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="img">
+ 											@endif
+ 										</a>
+ 									</div>
+ 									<div class="product-info">
+ 										<h6 class="product-name"><a href="#">{{$top_products[$n]->title_en}}</a></h6>
+ 										<div class="rating">
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 										</div>
+ 										<span class="price">
+ 											<span class="amount"><span class="currencySymbol">$</span>{{$top_products[$n]->productPrice->price}}</span>
+ 										</span>
+ 										<div class="button-group d-none">
+ 											<div class="wishlist"><a href="#"><span>wishlist</span></a></div>
+ 											<div class="quickview"><a href="#"><span>Quick View</span></a></div>
+ 											<div class="compare"><a href="#"><span>Compare</span></a></div>
+ 											<div class="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+ 										</div>
+ 									</div>
+ 								</div>
+ 								<div class="single-product single-product-show">
+ 									<div class="product-img">
+ 										<a href="#">
+ 											<img src="{{asset('assets/img/product1.jpg')}}" alt="Left Banner" class="img-responsive cover product-n">
+ 											<img src="{{asset('assets/img/product1-1.jpg')}}" alt="Left Banner" class="img-responsive cover product-h d-none">
+ 										</a>
+ 									</div>
+ 									<div class="product-info">
+ 										<h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
+ 										<div class="rating">
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 											<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 										</div>
+ 										<span class="price">
+ 											<span class="amount"><span class="currencySymbol">$</span>70.00</span>
+ 										</span>
+ 										<div class="button-group d-none">
+ 											<div class="wishlist"><a href="#"><span>wishlist</span></a></div>
+ 											<div class="quickview"><a href="#"><span>Quick View</span></a></div>
+ 											<div class="compare"><a href="#"><span>Compare</span></a></div>
+ 											<div class="add-to-cart"><a href="#"><span>Add to cart</span></a></div>
+ 										</div>
+ 									</div>
+ 								</div>
+ 							</div>
+ 						</div>
+ 						@php $n++ @endphp
+ 						@endfor
+ 					</div>
+ 					<!-- Add Pagination -->
+ 					<!-- Add Arrows -->
+ 				</div>
+ 			</div>
+ 			<div class="banner-section">
+ 				<a href="">
+ 					<div class="banner-cnt">
+ 						<img src="{{asset('assets/img/slide2.jpg')}}" alt="Left Banner" class="img-responsive cover">
+ 						<div class="slide-txt">
+ 							<div class="bannertext">
+ 								<h2>Medisine Encompesses</h2>
+ 							</div>
+ 							<button class="btn ctm-btn shop-btn">Shop now</button>
+ 						</div>
+ 					</div>
+ 				</a>
+ 			</div>
+ 			<div class="product-slider product-slider2">
+ 				<div class="row mar-0">
+ 					<div class="col-lg-4">
+ 						<div class="heading-part">
+ 							<h2 class="main-title">Discount Products</h2>
+ 							<div class="next-pre">
+ 								<div class="swiper-button-prev featured-prev"></div>
+ 								<div class="swiper-button-next featured-next"></div>
+ 							</div>
+ 						</div>
+ 						<div class="swiper-container featured-container">
+ 							<div class="swiper-wrapper">
+ 								@php
+ 								$n = 0;
+ 								@endphp
+ 								@for($i=0;$i<ceil($discount_products->count() / 3);$i++)
+ 								<div class="swiper-slide">
+ 									<div class="product">
+ 										@for($j=0;$j<3;$j++)
+ 										<div class="single-product flex-pro">
+ 											<div class="row mar-0">
+ 												<div class="col-4 pad-l-0">
+ 													<div class="product-img sng-i-c">
+ 														<a href="#">
+ 															@if($discount_products[$n]->products->product_img)
+ 															<img src="{{ asset('proAltImg/' . $discount_products[$n]->products->product_img)  }}" alt="Left Banner" class="img-responsive product-n">
+ 															<img src="{{ asset('proAltImg/' . $discount_products[$n]->products->product_img)  }}" alt="Left Banner" class="img-responsive product-h d-none">
+ 															@else
+ 															<img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="img">
+ 															@endif
+ 														</a>
+ 													</div>
+ 												</div>
+ 												<div class="col-8">
+ 													<div class="product-info">
+ 														<h6 class="product-name"><a href="#">{{$discount_products[$n]->products->title_en}}</a></h6>
+ 														<div class="rating">
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														</div>
+ 														<span class="price">
+ 															<span class="amount"><span class="currencySymbol">$</span>{{$discount_products[$n]->price}}</span>
+ 														</span>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+ 										@php $n++ @endphp
+ 										@endfor
+ 									</div>
+ 								</div>
+ 								@endfor
+ 							</div>
+ 							<!-- Add Pagination -->
+ 							<!-- Add Arrows -->
+ 						</div>
+
+ 					</div>
+ 					<div class="col-lg-4">
+ 						<div class="heading-part">
+ 							<h2 class="main-title">Top Products</h2>
+ 							<div class="next-pre">
+ 								<div class="swiper-button-prev bestseller-prev"></div>
+ 								<div class="swiper-button-next bestseller-next"></div>
+ 							</div>
+ 						</div>
+ 						<div class="swiper-container bestseller-container">
+ 							<div class="swiper-wrapper">
+ 								@php
+ 								$n = 0;
+ 								@endphp
+ 								@for($i=0;$i<ceil($footer_top_products->count() / 3);$i++)
+ 								<div class="swiper-slide">
+ 									<div class="product">
+ 										@for($j=0;$j<3;$j++)
+ 										<div class="single-product flex-pro">
+ 											<div class="row mar-0">
+ 												<div class="col-4 pad-l-0">
+ 													<div class="product-img sng-i-c">
+ 														<a href="#">
+ 															@if($footer_top_products[$n]->product_img)
+ 															<img src="{{ asset('proAltImg/' . $footer_top_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-n">
+ 															<img src="{{ asset('proAltImg/' . $footer_top_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-h d-none">
+ 															@else
+ 															<img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="img">
+ 															@endif
+ 														</a>
+ 													</div>
+ 												</div>
+ 												<div class="col-8">
+ 													<div class="product-info">
+ 														<h6 class="product-name"><a href="#">{{$footer_top_products[$n]->title_en}}</a></h6>
+ 														<div class="rating">
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														</div>
+ 														<span class="price">
+ 															<span class="amount"><span class="currencySymbol">$</span>{{$footer_top_products[$n]->productPrice->price}}</span>
+ 														</span>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+ 										@php $n++ @endphp
+ 										@endfor
+ 									</div>
+ 								</div>
+ 								@endfor
+ 							</div>
+ 							<!-- Add Pagination -->
+ 							<!-- Add Arrows -->
+ 						</div>
+ 					</div>
+ 					<div class="col-lg-4">
+ 						<div class="heading-part">
+ 							<h2 class="main-title">New Item’s</h2>
+ 							<div class="next-pre">
+ 								<div class="swiper-button-prev new-item-prev"></div>
+ 								<div class="swiper-button-next new-item-next"></div>
+ 							</div>
+ 						</div>
+ 						<div class="swiper-container new-item-container">
+ 							<div class="swiper-wrapper">
+ 								@php
+ 								$n = 0;
+ 								@endphp
+ 								@for($i=0;$i<ceil($new_products->count() / 3);$i++)
+ 								<div class="swiper-slide">
+ 									<div class="product">
+ 										@for($j=0;$j<3;$j++)
+ 										<div class="single-product flex-pro">
+ 											<div class="row mar-0">
+ 												<div class="col-4 pad-l-0">
+ 													<div class="product-img sng-i-c">
+ 														<a href="#">
+ 															@if($new_products[$n]->product_img)
+ 															<img src="{{ asset('proAltImg/' . $new_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-n">
+ 															<img src="{{ asset('proAltImg/' . $new_products[$n]->product_img)  }}" alt="Left Banner" class="img-responsive product-h d-none">
+ 															@else
+ 															<img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="img">
+ 															@endif
+ 														</a>
+ 													</div>
+ 												</div>
+ 												<div class="col-8">
+ 													<div class="product-info">
+ 														<h6 class="product-name"><a href="#">{{$new_products[$n]->title_en}}</a></h6>
+ 														<div class="rating">
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 															<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														</div>
+ 														<span class="price">
+ 															<span class="amount"><span class="currencySymbol">$</span>{{$new_products[$n]->productPrice->price}}</span>
+ 														</span>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+ 										@php $n++ @endphp
+ 										@endfor
+ 									</div>
+ 								</div>
+ 								@endfor
+ 							</div>
+ 							<!-- Add Pagination -->
+ 							<!-- Add Arrows -->
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<div class="col-12 d-block d-md-none col-md-4 col-lg-3 pad-l-0">
+ 			<div class="sidebar"> 
+ 				<div class="left_banner d-none"> 
+ 					<a href="#"><img src="{{asset('assets/img/side1.jpg')}}" alt="Left Banner" class="cover img-responsive"></a> 
+ 				</div>
+ 				<div class="left-feature">
+ 					<div class="feature">
+ 						<div class="fea-icon shiping"></div>
+ 						<h6>Free Shipping</h6>
+ 						<p>Free delivery worldwide</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon order"></div>
+ 						<h6>Order Online</h6>
+ 						<p>Hours : 8am - 11pm</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon save"></div>
+ 						<h6>Shop And Save</h6>
+ 						<p>For All Spices & Herbs</p>
+ 					</div>
+ 					<div class="feature">
+ 						<div class="fea-icon safe"></div>
+ 						<h6>Safe Shoping</h6>
+ 						<p>Ensure genuine 100%</p>
+ 					</div>
+ 				</div>
+ 				<div class="product-slider">
+ 					<div class="heading-part">
+ 						<h2 class="main-title">Top Products</h2>
+ 						<div class="next-pre">
+ 							<div class="swiper-button-prev top-product-prev"></div>
+ 							<div class="swiper-button-next top-product-next"></div>
+ 						</div>
+ 					</div>
+ 					<div class="swiper-container top-product-container">
+ 						<div class="swiper-wrapper">
+ 							@for($i=0;$i<4;$i++)
+ 							<div class="swiper-slide">
+ 								<div class="product">
+ 									@for($j=0;$j<3;$j++)
+ 									<div class="single-product flex-pro">
+ 										<div class="row mar-0">
+ 											<div class="col-4 pad-l-0">
+ 												<div class="product-img sng-i-c">
+ 													<a href="#">
+ 														<img src="{{asset('assets/img/product4.jpg')}}" alt="Left Banner" class="img-responsive product-n">
+ 														<img src="{{asset('assets/img/product4-1.jpg')}}" alt="Left Banner" class="img-responsive product-h d-none">
+ 													</a>
+ 												</div>
+ 											</div>
+ 											<div class="col-8">
+ 												<div class="product-info">
+ 													<h6 class="product-name"><a href="#">Latin literature from 45 BC, making it over old.</a></h6>
+ 													<div class="rating">
+ 														<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														<span class="fa fa-stack active"><i class="fa fa-star fa-stack-1x"></i></span>
+ 														<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i></span>
+ 													</div>
+ 													<span class="price">
+ 														<span class="amount"><span class="currencySymbol">$</span>70.00</span>
+ 													</span>
+ 												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+ 									@endfor
+ 								</div>
+ 							</div>
+ 							@endfor
+ 						</div>
+ 						<!-- Add Pagination -->
+ 						<!-- Add Arrows -->
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
+ @endsection
+ @section('script')
+ <script>
+ </script>
+ @endsection

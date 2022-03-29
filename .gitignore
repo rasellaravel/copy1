@@ -1,0 +1,13 @@
+appdata/node_modules/
+appdata/public/
+appdata/storage/*.key
+appdata/vendor/
+appdata/.env
+appdata/.env.backup
+appdata/.phpunit.result.cache
+appdata/Homestead.json
+appdata/Homestead.yaml
+appdata/npm-debug.log
+appdata/yarn-error.log
+.idea/
+appdata/composer.lock
